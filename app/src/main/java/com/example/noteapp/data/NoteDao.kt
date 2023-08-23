@@ -7,17 +7,17 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface ContactDao {
+interface NoteDao {
     // C create  R read  U update  D delete
     @Insert
-    fun createContact(contact: Contact)
+    fun createNote(note:Note)
 
-    @Query("SELECT * FROM Contact")
-    fun getAllContact():List<Contact>
+    @Query("SELECT * FROM Note")
+    fun getAllNotes():List<Note>
 
     @Update
-    fun updateContact(contact: Contact)
+    fun updateNote(note: Note)
 
     @Delete
-    fun deleteContact(contact: Contact)
+    fun deleteNote(note: Note)
 }
