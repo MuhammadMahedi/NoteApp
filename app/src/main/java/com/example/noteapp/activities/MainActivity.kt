@@ -8,16 +8,16 @@ import androidx.room.RoomDatabase
 import com.example.noteapp.adapters.NoteAdapter
 import com.example.noteapp.data.Note
 import com.example.noteapp.data.NoteDatabase
-import com.example.noteapp.databinding.ActivityAddNoteBinding
 import com.example.noteapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.Serializable
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding.root)  /*
 
         binding.fabAddNote.setOnClickListener{
             val intent=Intent(this,AddNoteActivity::class.java)//
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             .build()
         var notes=db.getNoteDao().getAllNotes()
 
-        return notes
+        return notes  */
 
     }
 }

@@ -1,17 +1,14 @@
 package com.example.noteapp.adapters
 
 import android.content.Context
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.noteapp.R
 import com.example.noteapp.data.Note
-import com.example.noteapp.viewModel.NoteViewModel
+
 
 class NoteAdapter(private val context: Context,
                   private var list:List<Note>
@@ -39,7 +36,16 @@ class NoteAdapter(private val context: Context,
             holder.itemView.setOnClickListener{
                 if(onClickListener!=null){
                     onClickListener!!.onClick(position, note)
+
+
                 }
+
+//                val action = HomeFragmentDirections.
+//                actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
+//
+//                holder.view.findNavController().navigate(action)
+
+
             }
         }
 
