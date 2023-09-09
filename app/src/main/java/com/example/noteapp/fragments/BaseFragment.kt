@@ -28,7 +28,7 @@ abstract class BaseFragment< VB: ViewBinding>(
         _binding=bindingInflater.invoke(inflater)
 
 
-
+        
         return binding.root
     }
 }

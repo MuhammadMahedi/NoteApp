@@ -6,22 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.InsertFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/insert_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.AddNoteActivity"
         android:orientation="vertical"
-
+        android:layout_marginTop="50dp"
         >
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_addNote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ECE9D0"
-            app:titleTextColor="@color/black"
-            app:title="Add a new note"
-            android:layout_marginBottom="20dp"
-            />
         <EditText
             android:id="@+id/editTextTitle"
             android:layout_width="match_parent"

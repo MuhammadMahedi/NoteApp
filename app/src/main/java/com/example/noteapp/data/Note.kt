@@ -14,11 +14,11 @@ data class Note(
     val id:Int,
 
     @ColumnInfo("Title")
-    val title:String,
+    var title:String,
     @ColumnInfo("Date")
-    val date:String,
+    var date:String,
     @ColumnInfo("Description")
-    val description:String
+    var description:String
 
 ):Parcelable
 

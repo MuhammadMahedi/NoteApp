@@ -25,9 +25,22 @@ class HomeViewModel @Inject constructor(var repos:NoteRepo): ViewModel() {
         viewModelScope.launch {
             repos.addNote(note)
         }
+  }
 
-
+    fun deleteData(note:Note){
+        viewModelScope.launch {
+            repos.deleteNote(note)
+            getAllNotes()
+        }
     }
+
+    fun updateData(note: Note){
+        viewModelScope.launch {
+            repos.updateNote(note)
+            getAllNotes()
+        }
+    }
+
 
     fun getAllNotes(){
         _allNotes.postValue(repos.getAllNotes())

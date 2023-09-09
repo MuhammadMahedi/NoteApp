@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.R
 import com.example.noteapp.data.Note
@@ -33,20 +35,15 @@ class NoteAdapter(private val context: Context,
             holder.title.text= note.title
             holder.date.text=note.date
 
+            holder.delete.setOnClickListener {
+                onClickListener?.onDeleteClick(note)
+            }
+
             holder.itemView.setOnClickListener{
                 if(onClickListener!=null){
                     onClickListener!!.onClick(position, note)
-
-
                 }
-
-//                val action = HomeFragmentDirections.
-//                actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
-//
-//                holder.view.findNavController().navigate(action)
-
-
-            }
+             }
         }
 
     }
@@ -56,12 +53,14 @@ class NoteAdapter(private val context: Context,
 
     interface OnClickListener{
         fun onClick(position:Int,model:Note)
+        fun onDeleteClick(model:Note)
 
     }
 
     class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view){
         val title=view.findViewById<TextView>(R.id.tv_title)
         val date=view.findViewById<TextView>(R.id.tv_date)
+        val delete=view.findViewById<ImageView>(R.id.delete_icon)
     }
 
 
